@@ -13,11 +13,10 @@ Route::post('/products/register', [ProductController::class, 'store'])->name('pr
 // 商品検索
 Route::get('/products/search', [ProductController::class, 'search'])->name('products.search');
 
-// 商品詳細
-Route::get('/products/{productId}', [ProductController::class, 'show'])->name('products.show');
+// 商品編集
+Route::get('/products/{productId}', [ProductController::class, 'edit'])->name('products.edit');
 
 // 商品更新
-Route::get('/products/{productId}/update', [ProductController::class, 'edit'])->name('products.edit');
 Route::put('/products/{productId}/update', [ProductController::class, 'update'])->name('products.update');
 
 // 商品削除

@@ -54,7 +54,7 @@
 
         <section class="product-index__list">
           @forelse ($products as $product)
-          <a href="{{ route('products.show', $product->id) }}" class="product-card">
+          <a href="{{ route('products.edit', $product->id) }}" class="product-card">
             <img src="{{ asset('storage/images/' . $product->image) }}" alt="{{ $product->name }}" class="product-card__image">
             <div class="product-card__info">
               <span class="product-card__name">{{ $product->name }}</span>

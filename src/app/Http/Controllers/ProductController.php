@@ -152,7 +152,15 @@ class ProductController extends Controller
 
         if ($request->hasFile('image')) {
             $file = $request->file('image');
-            $fileName = $file->getClientOriginalName();
+
+            $originalName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+            $extension = $file->getClientOriginalExtension();
+            $fileName = $originalName . '_' . time() . '.' . $extension;
+
+            if ($product->image && Storage::disk('public')->exists('images/' . $product->image)) {
+                Storage::disk('public')->delete('images/' . $product->image);
+            }
+
             $file->storeAs('images', $fileName, 'public');
             $product->image = $fileName;
         }
@@ -162,13 +170,12 @@ class ProductController extends Controller
         $product->description = $validated['description'];
         $product->save();
 
-        $seasonIds = array_map(function ($seasonId) {
-            return (int)$seasonId;
-        }, $validated['seasons'] ?? []);
+        $seasonIds = array_map('intval', $validated['seasons'] ?? []);
         $product->seasons()->sync($seasonIds);
 
         return redirect()->route('products.index')->with('message', '商品情報を更新しました！');
     }
+
 
     public function destroy($productId)
     {
