@@ -1,0 +1,299 @@
+/* 全体共通 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #f8f8f8;
+}
+
+/* ヘッダー */
+.header {
+  width: 100%;
+  height: 53px;
+  background-color: white;
+  border-bottom: 1px solid #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.header__title {
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+}
+
+.header__logo {
+  font-size: 30px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: #f5c800;
+}
+
+/* メイン */
+.main {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+}
+
+/* タイトル */
+.product-register__title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 32px;
+  max-width: 800px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+/* フォーム全体 */
+.product-register form {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* 各入力ブロック */
+.form-group {
+  margin-bottom: 24px;
+  overflow: visible;
+}
+
+.form-group label {
+  display: block;
+  font-weight: normal;
+  margin-bottom: 6px;
+  text-align: left;
+  padding-left: 2px;
+  font-size: 16px;
+}
+
+/* 必須ラベル */
+.required {
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  margin-left: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 20px;
+}
+
+.note {
+  font-size: 12px;
+  color: red;
+  margin-left: 8px;
+}
+
+/* テキスト入力・テキストエリア */
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+  color: #333;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #ccc;
+}
+
+.form-group textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+/* ファイル選択 */
+.form-group input[type="file"] {
+  margin-top: 8px;
+}
+
+/* 季節チェックボックス */
+.season-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.season-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #555;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.season-checkbox:checked::before {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  background-color: #555;
+  border-radius: 50%;
+  color: white;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.season-options label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #333;
+}
+
+/* エラーメッセージ */
+.error {
+  color: red;
+  font-size: 14px;
+  margin: 6px 0 0 0;
+  line-height: 1.5;
+}
+
+/* ボタンエリア */
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.btn {
+  width: 100%;
+  max-width: 200px;
+  height: 50px;
+  padding: 0;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn--gray {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.btn--yellow {
+  background-color: #f5c800;
+  color: black;
+}
+
+.btn--yellow:hover {
+  background-color: #d4b100;
+}
+
+/* カスタムファイル選択ボタン */
+.custom-file-input {
+  opacity: 0;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.custom-file-input:hover {
+  cursor: pointer;
+}
+
+.custom-file {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 118px;
+  height: 31px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.custom-file-label {
+  z-index: 1;
+  position: relative;
+  color: #333;
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 31px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.file-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.file-name-label {
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
+}
+
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 768px) {
+  .main {
+    padding: 20px;
+  }
+
+  .product-register__title,
+  .product-register form {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .season-options {
+    flex-direction: column;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    max-width: 100%;
+    width: 100%;
+  }
+}

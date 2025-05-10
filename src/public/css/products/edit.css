@@ -1,0 +1,288 @@
+/* 共通設定 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #f8f8f8;
+}
+
+/* ヘッダー */
+.header {
+  width: 100%;
+  height: 53px;
+  background-color: white;
+  border-bottom: 1px solid #f4f4f4;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.header__logo {
+  font-size: 30px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: #f5c800;
+}
+
+/* メイン */
+.main {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+}
+
+/* 編集ブロック */
+.product-show {
+  padding: 40px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+}
+
+/* パンくずリスト */
+.product-show__nav {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.product-show__nav a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.product-show__nav a:hover {
+  text-decoration: underline;
+}
+
+/* 横並びレイアウト */
+.product-show__content {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 24px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+/* 画像エリア */
+.product-show__image {
+  width: 100%;
+  max-width: 374px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.product-show__image img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.custom-file-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.custom-file-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 118px;
+  height: 31px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.custom-file-label input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 100px;
+  opacity: 0;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+
+.current-file-name {
+  font-size: 14px;
+  color: #333;
+}
+
+/* フォームエリア */
+.product-show__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 16px;
+  color: #333;
+  padding-left: 2px;
+}
+
+.input--product-name,
+.input--product-price {
+  width: 100%;
+  height: 43px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  background-color: white;
+  color: #333;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #ccc;
+}
+
+.form-group textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+  color: #333;
+  resize: vertical;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+/* 商品説明欄 */
+.form-group--description {
+  width: 100%;
+}
+
+/* 季節チェック */
+.season-options {
+  display: flex;
+  gap: 28px;
+  margin-top: 8px;
+}
+
+.season-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #555;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.season-checkbox:checked::before {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  background-color: #555;
+  border-radius: 50%;
+  color: white;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+}
+
+/* アクションボタン */
+.product-show__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.btn {
+  width: 200px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn--gray {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.btn--yellow {
+  background-color: #f5c800;
+  color: black;
+}
+
+.btn--yellow:hover {
+  background-color: #d4b100;
+}
+
+.btn--delete {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  margin-left: 32px;
+}
+
+.btn--delete__icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-color: #FD0707;
+  mask: url('/images/trash-icon.svg') no-repeat center;
+  -webkit-mask: url('/images/trash-icon.svg') no-repeat center;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+}
+
+input[type="file"] {
+  color: transparent;
+}
+
+.current-file-name {
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
+}
